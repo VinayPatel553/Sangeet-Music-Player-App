@@ -108,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
         thb.setCurrentTab(0);
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.my)));
 
+
         //ONLINE
         String[] items1 = new String[10000];
         for (int i = 0; i < items1.length; i++) {
@@ -248,6 +249,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 });
+
                 try {
                     sbo.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                         @Override
@@ -273,6 +275,8 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+//      // local songs
         Dexter.withContext(this)
                 .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
                 .withListener(new PermissionListener() {
@@ -322,7 +326,6 @@ public class MainActivity extends AppCompatActivity {
 
                         ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this, R.layout.each, R.id.text_view1, items);
                         lv.setAdapter(adapter);
-
 
                         String currentSong = lv.getItemAtPosition(position).toString();
 
@@ -527,7 +530,6 @@ public class MainActivity extends AppCompatActivity {
         menuInflater.inflate(R.menu.menu,menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();

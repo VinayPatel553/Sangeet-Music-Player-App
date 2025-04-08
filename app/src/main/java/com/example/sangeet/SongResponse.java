@@ -3,23 +3,11 @@ package com.example.sangeet;
 import java.util.List;
 
 public class SongResponse {
-    private List<Song> songs;
+    private List<Song> data;
 
-    public List<Song> getSongs() {
-        return songs;
-    }
+    // Getter
+    public List<Song> getData() { return data; }
+
+    // Setter
+    public void setData(List<Song> data) { this.data = data; }
 }
-
-class Song {
-    private String title;
-    private String url;
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-}
-
